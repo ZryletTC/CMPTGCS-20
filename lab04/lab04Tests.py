@@ -1,4 +1,5 @@
-# lab04Tests.py    Tests for lab04, UCSB CS20, T. Pennebaker, 04/21/2016
+# lab04Tests.py
+# Tests for lab04, UCSB CS20, T. Pennebaker, 04/21/2016
 
 import unittest
 from lab04Funcs import *
@@ -257,8 +258,8 @@ if __name__ == '__main__':
     unittest.main(exit=False)
 
     # Uncomment "runTestsWithPrefix" line to run just SOME tests
-    #    First parameter is name of file with tests
-    #    Second parameter is prefix starting with test_
-    #      such as test_FtoC  or test_isString
+    #   First parameter is name of file with tests
+    #   Second parameter is prefix starting with test_
+    #   such as test_FtoC  or test_isString
 
     # runTestsWithPrefix("lab04Tests.py","test_notStringContainingE")
