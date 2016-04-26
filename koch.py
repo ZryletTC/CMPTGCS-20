@@ -3,20 +3,18 @@
 import turtle, math
 from turtle import *
 
-def koch(l,s): #level and size
-    turtle.clearscreen()
+def koch(l,s,t): #level and size
     turtle.screensize(2000,2000)
-    t = turtle.Turtle()
     t.speed(0)
+    t.up()
     t.setpos(-s/2.,-s/3.*math.sin(math.pi/3))
-    t.clear()
+    t.down()
     t.ht()
     turtle.tracer(0,0)
     for i in range(3):
         kochLine(l,s,t)
         t.left(120)
         turtle.update()
-    turtle.exitonclick()
 
 def kochLine(l,s,t):
     if (l<=2):
@@ -38,4 +36,9 @@ def kochLine(l,s,t):
         
 #--------------------------------
 
-#koch(input("Level? "),input("Size? "))
+bob = turtle.Turtle()
+def drawKoch(level,size):
+    koch(level,size,bob)
+
+#def drawKoch():
+#    koch(input("Level? "),input("Size? "),t)
