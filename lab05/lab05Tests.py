@@ -124,18 +124,30 @@ class TestLab05Functions(unittest.TestCase):
     def test_indexOfShortestString_4(self):
        self.assertEqual(  indexOfShortestString(['bear','cat','dog','mouse']), 1 )
 
-    # @@@ ADD SIX TEST CASES HERE FOR smallestInt
-    # @@@ (a) a test case for an empty list
-    # @@@ (b) a test case for something that is not a list
-    # @@@ (c) a test case with only one thing in the list
-    # @@@ (d) a test case where the smallest int is the first item
-    # @@@ (e) a test case where the smallest int is the last item
-    # @@@ (f) a test case where smallest is neither the first nor last item
 
+
+    # tests for smallestInt
+
+    def test_smallestInt_1(self):
+       self.assertEqual(  smallestInt([]), False )
+
+    def test_smallestInt_2(self):
+       self.assertEqual(  smallestInt('foo'), False )
+
+    def test_smallestInt_3(self):
+       self.assertEqual(  smallestInt([40]), 40 )
+
+    def test_smallestInt_4(self):
+       self.assertEqual(  smallestInt([1,2,3,4,5,6]), 1 )
+
+    def test_smallestInt_5(self):
+       self.assertEqual(  smallestInt([50,30,10,30,50,10]), 10 )
+
+    def test_smallestInt_6(self):
+       self.assertEqual(  smallestInt([20,-90,40,70,80]), -90 )
 
 
     # End of tests for lab05
-
 
 
 
@@ -163,4 +175,4 @@ if __name__ == '__main__':
     #    Second parameter is prefix starting with test_ 
     #      such as test_FtoC  or test_isString
 
-    # runTestsWithPrefix("lab05Tests.py","test_ithOfNPointsOnCircleX") 
+    # runTestsWithPrefix("lab05Tests.py","test_indexOfSmallestInt") 

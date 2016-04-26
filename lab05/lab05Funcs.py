@@ -1,14 +1,9 @@
-#   lab05Funcs.py
+#   lab05Funcs.py   SOLO, Tyler Pennebaker, pennebaker@cs.ucsb.edu
 #   Starting point for lab05, CS8/CS20, 04/29/2014
 #   Exercises for working with lists
 
 from lab02Funcs import isList
 
-
-# @@@ READ OVER THIS FUNCTION---Then delete this @@@ Comment
-# @@@ IT IS PROVIDED AS AN EXAMPLE OF HOW TO FIND THE LARGEST ELEMENT IN A LIST
-# @@@ THIS IS WHAT YOU DO IF YOU DON'T HAVE A MAX FUNCTION BUILT IN TO YOUR
-# @@@ LANGUAGE
 
 def largestInt(listOfInts):
     """
@@ -61,14 +56,6 @@ def largestInt(listOfInts):
     # left in maxSoFar must be the largest one.
 
     return maxSoFar
-
-
-
-# @@@ READ OVER THIS FUNCTION---Then delete this @@@ Comment
-# @@@ IT IS PROVIDED AS AN EXAMPLE OF HOW TO FIND THE INDEX
-# @@@ OF THE LARGEST ELEMENT IN A LIST
-# @@@ NOTE THAT FINDING THE INDEX IS DIFFERENT FROM FINDING THE VALUE
-
 
 def indexOfLargestInt(listOfInts):
     """
@@ -128,10 +115,6 @@ def indexOfLargestInt(listOfInts):
     return indexOfMaxSoFar
 
 
-# @@@ NOW: complete the function below
-# @@@  It will be similar to largestInt
-# @@@ Add your own test cases
-
 def smallestInt(listOfInts):
     """
     return value of smallest element of non-empty list of ints, or False otherwise
@@ -160,14 +143,20 @@ def smallestInt(listOfInts):
     >>>
     """
 
-    return "stub"
+    if type(listOfInts)!=list or listOfInts==[]: # Return False if not a list or is empty
+        return False
+
+    for number in listOfInts:
+        if type(number)!=int:
+            return False    # Return False if not all elements are ints
+
+    currentMin = listOfInts[0]
+    for number in listOfInts:
+        if number < currentMin:
+            currentMin = number
+    return currentMin
 
 
-
-
-
-# @@@ NOW: complete the function below
-# @@@  It will be similar to indexOfLargestInt
 
 def indexOfSmallestInt(listOfInts):
     """
@@ -200,14 +189,17 @@ def indexOfSmallestInt(listOfInts):
     """
 
 
-    return "stub"
+    if type(listOfInts)!=list or listOfInts==[]: # Return False if not a list or is empty
+        return False
 
+    currentMinIndex = 0
+    for i in range(0,len(listOfInts)):
+        if type(listOfInts[i])!=int:
+            return False    # Return False if not all elements are ints
+        if listOfInts[i] < listOfInts[currentMinIndex]:
+            currentMinIndex = i
+    return currentMinIndex
 
-# @@@ NOW: complete the function below
-# @@@  You'll have to decide which of the models above fits
-# @@@  Recall that len(s) returns the length of a string
-# @@@  If you have a listOfStrings, then len(listOfStrings[i])) returns the length
-# @@@    of the ith string in that list
 
 def longestString(listOfStrings):
     """
@@ -233,15 +225,18 @@ def longestString(listOfStrings):
     'wolf'
     >>>
     """
+    if type(listOfStrings)!=list or listOfStrings==[]:
+        return False
 
-    return "stub"
+    longestString = listOfStrings[0]
+    for string in listOfStrings:
+        if type(string)!=str:
+            return False
 
+        if len(string) > len(longestString):
+            longestString = string
+    return longestString
 
-
-
-
-# @@@ NOW: complete the function below
-# @@@  You'll have to decide which of the models above fits
 
 def indexOfShortestString(listOfStrings):
     """
@@ -266,9 +261,14 @@ def indexOfShortestString(listOfStrings):
     >>>
 
     """
-    return "stub"
 
+    if type(listOfStrings)!=list or listOfStrings==[]: # Return False if not a list or is empty
+        return False
 
-
-
-
+    currentMinIndex = 0
+    for i in range(0,len(listOfStrings)):
+        if type(listOfStrings[i])!=str:
+            return False    # Return False if not all elements are ints
+        if len(listOfStrings[i]) < len(listOfStrings[currentMinIndex]):
+            currentMinIndex = i
+    return currentMinIndex
