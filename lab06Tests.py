@@ -94,31 +94,29 @@ class TestLab06Functions(unittest.TestCase):
 
     # End of tests for lab06
 
-    def runTestsWithPrefix(testFile,prefix):
-        """
-        run only tests from testFile with a certain prefix
-        Example: runTestsWithPrefix("lab03Tests.py","test_isPrimaryColor")
-        """
-        loader = unittest.TestLoader()
-        loader.testMethodPrefix = prefix
-        suite = loader.discover('.', pattern = testFile) 
-        unittest.TextTestRunner(verbosity=2).run(suite)
+def runTestsWithPrefix(testFile,prefix):
+    """
+    run only tests from testFile with a certain prefix
+    Example: runTestsWithPrefix("lab03Tests.py","test_isPrimaryColor")
+    """
+    loader = unittest.TestLoader()
+    loader.testMethodPrefix = prefix
+    suite = loader.discover('.', pattern = testFile) 
+    unittest.TextTestRunner(verbosity=2).run(suite)
 
 
-    # When you run this file, it runs either ALL the tests, or
-    # just some tests.  It depends on which line you comment out (or not)
-    
-    if __name__ == '__main__':
+# When you run this file, it runs either ALL the tests, or
+# just some tests.  It depends on which line you comment out (or not)
 
-        # To run ALL tests, uncomment the "unittest.main(exit=False)" line
+if __name__ == '__main__':
 
-        print "#1"
-        unittest.main(exit=False)
+    # To run ALL tests, uncomment the "unittest.main(exit=False)" line
 
-        # Uncomment "runTestsWithPrefix" line to run just SOME tests
-        #    First parameter is name of file with tests
-        #    Second parameter is prefix starting with test_ 
-        #      such as test_FtoC  or test_isString
+    unittest.main(exit=False)
 
-        print "#2"
-        runTestsWithPrefix("lab06Tests.py","test_allStudentsMajoringIn")
+    # Uncomment "runTestsWithPrefix" line to run just SOME tests
+    #    First parameter is name of file with tests
+    #    Second parameter is prefix starting with test_ 
+    #      such as test_FtoC  or test_isString
+
+    #runTestsWithPrefix("lab06Tests.py","test_allStudentsMajoringIn")
