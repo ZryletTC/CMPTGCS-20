@@ -1,5 +1,4 @@
-# @@@ INSERT YOUR NAME HERE
-
+# Tyler Pennebaker
 # lab07Tests.py    Tests for lab07, UCSB CS20, S16, P. Conrad
 
 import unittest            
@@ -8,7 +7,6 @@ from lab07Funcs import *
 class TestLab07Functions(unittest.TestCase): 
 
     # tests for ithOfNPointsOnCircleX
-
     def test_ithOfNPointsOnCircleX_1(self):
          """ point is at the right hand side of the unit circle, so x = r """ 
          self.assertAlmostEqual( ithOfNPointsOnCircleX(0,4,1.0), 1.0, 3)
@@ -59,31 +57,48 @@ class TestLab07Functions(unittest.TestCase):
         """
         self.assertAlmostEqual(ithOfNPointsOnCircleX(1,3,2.5), -1.25, 3)
 
-    # @@@ UNCOMMENT THE TEST CASE BELOW
-    # @@@ Fill in the docstring with an appropriate explanation
-    # @@@ Similar to the ones in the test cases above
-    # @@@ and replace THE 'xxx' with the expected value of the function call
-    # 
-    # def test_ithOfNPointsOnCircleX_11(self):
-    #    """
-    #    @@@ REPLACE THIS COMMENT WITH AN EXPLANATION
-    #    """
-    #    self.assertAlmostEqual(ithOfNPointsOnCircleX(2,3,1.0),'xxx', 3)
+    def test_ithOfNPointsOnCircleX_11(self):
+        """
+        point is 240 degrees around, counter clockwise.
+        we end up with a 30/60/90 triangle, with a hypotenuse of 1.0
+        That makes the short side of the triangle value 0.5
+        But since it is in the third quadrant, it is -0.5 
+        """
+        self.assertAlmostEqual(ithOfNPointsOnCircleX(2,3,1.0),-0.5, 3)
+
 
     # tests for ithOfNPointsOnCircleY
-
     def test_ithOfNPointsOnCircleY_1(self):
          """ point is at the right hand side of the unit circle, so y = 0 """ 
          self.assertAlmostEqual( ithOfNPointsOnCircleY(0,4,1.0), 0.0, 3)
 
-    # NOW INSERT TEST CASES test_ithOfNPointsOnCircleY_2
-    # through test_ithOfNPointsOnCircleY_8, by copy/pasting the cases
-    # from test_ithOfNPointsOnCircleX_2 through test_ithOfNPointsOnCircleY_8
-    # and adjusting as needed.   Think about the unit circle, and where
-    # each point would fall.
+    def test_ithOfNPointsOnCircleY_2(self):
+         """ point is at the right hand side of the unit circle, so y = 0 """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(0,4,2.5), 0.0, 3)
 
-    
-    
+    def test_ithOfNPointsOnCircleY_3(self):
+         """ point is at the top of unit circle, so y = r """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(1,4,1.0), 1.0, 3)
+
+    def test_ithOfNPointsOnCircleY_4(self):
+         """ point is at the top of the unit circle, so y = r """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(1,4,2.5), 2.5, 3)
+
+    def test_ithOfNPointsOnCircleY_5(self):
+         """ point is at the left of unit circle, so y = 0 """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(2,4,1.0), 0.0, 3)
+
+    def test_ithOfNPointsOnCircleY_6(self):
+         """ point is at the left of the unit circle, so y = 0 """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(2,4,2.5), 0.0, 3)
+
+    def test_ithOfNPointsOnCircleY_7(self):
+         """ point is at the bottom of unit circle, so y = -r """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(3,4,1.0), -1.0, 3)
+
+    def test_ithOfNPointsOnCircleY_8(self):
+         """ point is at the bottom of the unit circle, so y = -r """ 
+         self.assertAlmostEqual( ithOfNPointsOnCircleY(3,4,2.5), -2.5, 3)
 
 
     # End of tests for lab07
