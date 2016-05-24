@@ -1,5 +1,4 @@
-# @@@ INSERT YOUR NAME HERE
-
+# Tyler Pennebaker
 # lab07 for cs20, S16, UCSB (Instructor: Conrad)
 
 # function ithOfNPointsOnCircleX
@@ -19,13 +18,8 @@ def ithOfNPointsOnCircleX(i,n,r):
     points are numbered from 0 through n-1, spread counterclockwise around circle
     point 0 is at angle 0, as of on a unit circle, i.e. at point (0,r)
     """
-
-    # Hints:
-    #   Basic formula is x = r cos (theta)
-    #   But you need to use Python notation, and the math module
-    #   The theta angle is in radians, and is some "portion" of 2 pi  
     
-    return "stub" 
+    return r*math.cos(2*i*math.pi/n) 
 
 def ithOfNPointsOnCircleY(i,n,r):
     """ 
@@ -33,10 +27,8 @@ def ithOfNPointsOnCircleY(i,n,r):
     points are numbered from 0 through n-1, spread counterclockwise around circle
     point 0 is at angle 0, as of on a unit circle, i.e. at point (0,r)
     """
-
-    # Hints: similar to ithOfNPointsOnCircleX, but use r sin (theta)
     
-    return "stub" # Hint: r sin(theta)
+    return r*math.sin(2*i*math.pi/n) 
 
 
 
